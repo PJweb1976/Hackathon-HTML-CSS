@@ -70,6 +70,17 @@ figure {
 .header a {
   color: turquoise;
 }
+.item__figure {
+  font-size: 1.2em;
+  border: 0.1em solid grey;
+  padding: 0.1em;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 3em 10em 4em 3em;
+  grid-gap: 0.1em;
+
+}
 
 .control__group + .control__group {
   margin-top: 1em;
