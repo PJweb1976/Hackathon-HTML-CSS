@@ -1,0 +1,138 @@
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: calc(1em + 0.16vw);
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+
+  body *,
+  body *::after,
+  body *::before {
+    animation: none !important;
+    transition: none !important;
+    transition-duration: none !important;
+  }
+}
+
+p {
+  max-width: 60ch;
+}
+
+a {
+  color: orange;
+}
+
+a:visited {
+  color: red;
+}
+
+a:hover {
+  color: purple;
+}
+
+a:active,
+a:focus {
+  color: green;
+}
+
+figure {
+  margin: 0;
+}
+
+.foto-header {
+  display: flex;
+}
+.foto-header img {
+  max-width: 100%;
+  max-height: 30em;
+  object-fit: cover;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.header > * {
+  max-width: 74ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header a {
+  color: turquoise;
+}
+
+.control__group + .control__group {
+  margin-top: 1em;
+}
+.control__group > * + * {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5em;
+}
+
+.control__group legend {
+  border-bottom: 1px dashed;
+}
+
+.list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+/*media queries*/
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 12em 5em 3em;
+  }
+  .header {
+    background-color: lightblue;
+    grid-row: 1/4;
+  }
+  .main {
+    background-color: yellowgreen;
+    grid-column: 2/-1;
+  }
+  .widget-area {
+    background-color: pink;
+    grid-column: 2/-1;
+  }
+  .footer {
+    background-color: lightseagreen;
+    grid-column: 2/-1;
+  }
+  @media (min-width: 1500px) {
+    .container {
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 19em 4em;
+    }
+    .header {
+      background-color: lightgrey;
+      grid-row: 1 / span 2;
+    }
+    .main {
+      background-color: greenyellow;
+      grid-column: 2/-2;
+    }
+    .widget-area {
+      background-color: darkorange;
+      grid-row: 1 / span 2;
+      grid-column: -1 / -2;
+    }
+    .footer {
+      background-color: darkorchid;
+      grid-column: 2/-2;
+    }
+  }
+}
