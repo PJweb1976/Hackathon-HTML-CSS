@@ -82,14 +82,9 @@ figure {
 .header a {
   color: turquoise;
 }
-.item__figure {
-  font-size: 1.2em;
-  margin-left: 2em;
-  padding: 0.2em;
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 1em 1em 5em 0em;
-  grid-gap: 0.1em;
+.item__figure img {
+  object-fit: cover;
+  margin-left:0;
 }
 
 .control__group + .control__group {
@@ -111,6 +106,23 @@ figure {
   padding-left: 0;
   margin-bottom: 0;
 }
+.list__item {
+ position: relative;
+}
+
+.item__body {
+  position: absolute;
+  inset: 0;
+}
+.list--places .list__item {
+  position: relative;
+}
+
+.list--places .item__body {
+  position: absolute;
+  inset: 0;
+}
+
 .box-2 {
   border: 5px solid black;
   background-color: turquoise;
