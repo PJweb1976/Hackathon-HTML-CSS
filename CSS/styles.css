@@ -44,7 +44,19 @@ a:active,
 a:focus {
   color: green;
 }
-
+main {
+  display:flex;
+  width: fit-content;
+  font-size: 1em; 
+  text-align:center;
+  padding:1em;   
+}
+  main h2{
+    border: 20px;
+    display:flex;
+    width: 100%;
+    justify-content:center;
+}
 figure {
   margin: 0;
 }
@@ -72,12 +84,11 @@ figure {
 }
 .item__figure {
   font-size: 1.2em;
-  border: 0.1em solid grey;
-  padding: 0.1em;
-  height: 100%;
+  margin-left: 2em;
+  padding: 0.2em;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 3em 10em 4em 3em;
+  grid-template-rows: 1em 1em 5em 0em;
   grid-gap: 0.1em;
 }
 
@@ -115,6 +126,9 @@ figure {
     background-color: lightblue;
     grid-row: 1/4;
   }
+  .header a {
+    color: yellow;
+  }
   .main {
     background-color: yellowgreen;
     grid-column: 2/-1;
@@ -135,6 +149,9 @@ figure {
     .header {
       background-color: lightgrey;
       grid-row: 1 / span 2;
+    }
+    .header a {
+      color: darkorchid;
     }
     .main {
       background-color: greenyellow;
