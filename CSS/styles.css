@@ -1,3 +1,4 @@
+/*
 *,
 :after,
 :before {
@@ -44,19 +45,15 @@ a:active,
 a:focus {
   color: green;
 }
+*/
 main {
-  display:flex;
+  display: flex;
   width: fit-content;
-  font-size: 1em; 
-  text-align:center;
-  padding:1em;   
+  font-size: 1em;
+  text-align: center;
+  padding: 1em;
 }
-  main h2{
-    border: 20px;
-    display:flex;
-    width: 100%;
-    justify-content:center;
-}
+
 figure {
   margin: 0;
 }
@@ -82,6 +79,46 @@ figure {
 .header a {
   color: turquoise;
 }
+
+.container {
+  padding: 0;
+  margin: 0;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  width: 100%;
+}
+
+/*
+.container {
+  display: flex;
+  justify-content: left;
+  border: 1px solid black;
+  font-size: 1em;
+  text-align: center;
+  padding: 1em;
+}*/
+
+.list__item figure {
+  max-width: 100%;
+  border: 2px solid black;
+  padding: 5px;
+}
+/*geen gekke fotos*/
+.item__figure img {
+  object-fit: cover;
+  margin-left: 0;
+}
+/*geen idee wat dit doet*/
+.container {
+  position: relative;
+}
+/*bij uit alle plaatjes op elkaar*/
+.list__item {
+  position: relative;
+}
+
+/*
+
 .item__figure img {
   object-fit: cover;
   margin-left:0;
@@ -130,10 +167,61 @@ figure {
 }
 /*media queries*/
 @media (min-width: 1024px) {
-  .container {
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 12em 5em 3em;
+  /*.list__item {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: flex-end;
   }
+
+  .list__item > * {
+    flex: 1 0 2em;
+    border: 1px solid black;
+    font-size: 1em;
+    text-align: center;
+    padding: 1em;
+  }
+  .list__item figure {
+    max-width: 100%;
+  }*/
+  .container {
+    display: grid; 
+    grid-template-columns: repeat(5, 1fr); 
+    grid-template-rows: repeat(5, 1fr);
+  }
+  .list__item-1 {
+    grid-area: 1/1/2/2;
+  }
+  .list__item-2 {
+    grid-area: 2/1/3/2;
+  }
+  .list__item-3 {
+    grid-area: 3/1/4/2;
+  }
+  .list__item-4 {
+    grid-area: 4/1/5/2;
+  }
+  .list__item-5 {
+    grid-area: 5/1/6/2;
+  }
+  .list__item-6 {
+    grid-area: 1/2/2/3;
+  }
+  .list__item-7 {
+    grid-area: 2/2/3/3;
+  }
+  .list__item-8 {
+    grid-area: 3/2/4/3;
+  }
+  .list__item-9 {
+    grid-area: 4/2/5/3;
+  }
+  .list__item-10  {
+    grid-area: 5/2/6/3;
+  }
+
   .header {
     background-color: lightblue;
     grid-row: 1/4;
@@ -153,11 +241,57 @@ figure {
     background-color: lightseagreen;
     grid-column: 2/-1;
   }
+
   @media (min-width: 1500px) {
+
     .container {
-      grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: 19em 4em;
+      display: grid; 
+      grid-template-columns: repeat(5, 1fr); 
+      grid-template-rows: repeat(5, 1fr); 
     }
+    .list__item-1 {
+      grid-area: 1/1/2/2;
+    }
+    .list__item-2 {
+      grid-area: 1/2/2/3;
+    }
+    .list__item-3 {
+      grid-area: 1/3/2/4;
+    }
+    .list__item-4 {
+      grid-area: 1/4/2/5;
+    }
+    .list__item-5 {
+      grid-area: 1/5/2/6;
+    }
+    .list__item-6 {
+      grid-area: 2/1/3/2;
+    }
+    .list__item-7 {
+      grid-area: 2/2/3/3;
+    }
+    .list__item-8 {
+      grid-area: 2/3/3/4;
+    }
+    .list__item-9 {
+      grid-area: 2/4/3/5;
+    }
+    .list__item-10  {
+      grid-area: 2/5/3/6;
+    }
+  
+
+    }/*
+    .container {
+      display: flex;
+      justify-content: left;
+      border: 1px solid black;
+      font-size: 1em;
+      text-align: center;
+      padding: 1em;
+    }
+    */
+    
     .header {
       background-color: lightgrey;
       grid-row: 1 / span 2;
@@ -177,6 +311,6 @@ figure {
     .footer {
       background-color: darkorchid;
       grid-column: 2/-2;
-    }
+    } 
   }
 }
