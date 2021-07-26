@@ -1,4 +1,3 @@
-/*
 *,
 :after,
 :before {
@@ -45,7 +44,10 @@ a:active,
 a:focus {
   color: green;
 }
-*/
+
+ul {
+  list-style: none;
+}
 main {
   display: flex;
   width: fit-content;
@@ -70,6 +72,7 @@ figure {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: lightgrey;
 }
 .header > * {
   max-width: 74ch;
@@ -85,89 +88,58 @@ figure {
   margin: 0;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(10, 1fr);
+  grid-column-gap: 1em;
+  grid-row-gap: 0.5em;
   width: 100%;
 }
 
-/*
-.container {
-  display: flex;
-  justify-content: left;
-  border: 1px solid black;
-  font-size: 1em;
-  text-align: center;
-  padding: 1em;
-}*/
+.box-2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 0.5fr 0.2fr 1fr;
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+  border: 5px solid black;
+  background-color: turquoise;
+  padding: 5px 10px 10px 10px;
+}
 
-.list__item figure {
-  max-width: 100%;
+.box-2 h1 {
+  grid-area: 1/1/2/4;
+  border: 2px solid blue;
+}
+.box-2 legend {
+  grid-area: 2/1/3/4;
+  border: 2px solid red;
+  margin-bottom: 5px;
+}
+.control__group {
+  grid-area: 3/1/4/4;
+  margin-top: 1em;
   border: 2px solid black;
-  padding: 5px;
+  font-size: 0.8em;
+  text-align: left;
+  padding: 1em;
 }
 /*geen gekke fotos*/
 .item__figure img {
   object-fit: cover;
   margin-left: 0;
 }
-/*geen idee wat dit doet*/
-.container {
-  position: relative;
+.item__title {
+  font-size: 1em;
+}
+.item__figure {
+  border: 2px solid black;
+  margin-bottom:2em;
 }
 /*bij uit alle plaatjes op elkaar*/
 .list__item {
   position: relative;
 }
-
-/*
-
-.item__figure img {
-  object-fit: cover;
-  margin-left:0;
-}
-
-.control__group + .control__group {
-  margin-top: 1em;
-}
-.control__group > * + * {
-  display: flex;
-  flex-direction: column;
-  margin-top: 0.5em;
-}
-
-.control__group legend {
-  font-size: 1.5em;
-  border-bottom: 1px dashed;
-}
-.list {
-  font-style: italic;
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 0;
-}
-.list__item {
- position: relative;
-}
-
-.item__body {
-  position: absolute;
-  inset: 0;
-}
-.list--places .list__item {
-  position: relative;
-}
-
-.list--places .item__body {
-  position: absolute;
-  inset: 0;
-}
-
-.box-2 {
-  border: 5px solid black;
-  background-color: turquoise;
-  padding: 10px 30px 30px 30px;
-}
 /*media queries*/
 @media (min-width: 1024px) {
-  /*.list__item {
+  .list__item {
     padding: 0;
     margin: 0;
     display: flex;
@@ -185,11 +157,17 @@ figure {
   }
   .list__item figure {
     max-width: 100%;
-  }*/
+  }
+  .header {
+    background-color: lightblue;
+  }
   .container {
-    display: grid; 
-    grid-template-columns: repeat(5, 1fr); 
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 1em;
+    grid-row-gap: 0.5em;
+
   }
   .list__item-1 {
     grid-area: 1/1/2/2;
@@ -218,36 +196,44 @@ figure {
   .list__item-9 {
     grid-area: 4/2/5/3;
   }
-  .list__item-10  {
+  .list__item-10 {
     grid-area: 5/2/6/3;
   }
+  .box-2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.5fr 0.2fr 1fr;
+    grid-column-gap: 1em;
+    grid-row-gap: 0.5em;
+    border: 5px solid black;
+    background-color: turquoise;
+    padding: 5px 10px 10px 10px;
+  }
 
-  .header {
-    background-color: lightblue;
-    grid-row: 1/4;
+  .box-2 h1 {
+    grid-area: 1/1/2/4;
+    border: 2px solid blue;
   }
-  .header a {
-    color: yellow;
+  .box-2 legend {
+    grid-area: 2/1/3/4;
+    border: 2px solid red;
   }
-  .main {
-    background-color: yellowgreen;
-    grid-column: 2/-1;
-  }
-  .widget-area {
-    background-color: pink;
-    grid-column: 2/-1;
-  }
-  .footer {
-    background-color: lightseagreen;
-    grid-column: 2/-1;
+  .control__group {
+    grid-area: 3/1/4/4;
+    border: 2px solid black;
+    font-size: 0.8em;
+    text-align: left;
+    padding: 1em;
   }
 
   @media (min-width: 1500px) {
-
+    .header {
+      background-color: lightgray;
+    }
     .container {
-      display: grid; 
-      grid-template-columns: repeat(5, 1fr); 
-      grid-template-rows: repeat(5, 1fr); 
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(5, 1fr);
     }
     .list__item-1 {
       grid-area: 1/1/2/2;
@@ -276,41 +262,34 @@ figure {
     .list__item-9 {
       grid-area: 2/4/3/5;
     }
-    .list__item-10  {
+    .list__item-10 {
       grid-area: 2/5/3/6;
     }
-  
+    .box-2 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 0.5fr 0.2fr 1fr;
+      grid-column-gap: 2px;
+      grid-row-gap: 2px;
+      border: 5px solid black;
+      background-color: turquoise;
+      padding: 5px 10px 10px 10px;
+    }
 
-    }/*
-    .container {
-      display: flex;
-      justify-content: left;
-      border: 1px solid black;
-      font-size: 1em;
-      text-align: center;
+    .box-2 h1 {
+      grid-area: 1/1/2/4;
+      border: 2px solid blue;
+    }
+    .box-2 legend {
+      grid-area: 2/1/3/4;
+      border: 2px solid red;
+    }
+    .control__group {
+      grid-area: 3/1/4/4;
+      border: 2px solid black;
+      font-size: 0.8em;
+      text-align: left;
       padding: 1em;
     }
-    */
-    
-    .header {
-      background-color: lightgrey;
-      grid-row: 1 / span 2;
-    }
-    .header a {
-      color: darkorchid;
-    }
-    .main {
-      background-color: greenyellow;
-      grid-column: 2/-2;
-    }
-    .widget-area {
-      background-color: darkorange;
-      grid-row: 1 / span 2;
-      grid-column: -1 / -2;
-    }
-    .footer {
-      background-color: darkorchid;
-      grid-column: 2/-2;
-    } 
   }
 }
