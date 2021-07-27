@@ -4,18 +4,23 @@
 <html>
     <head>
         <title> Contact Beleving en toevoegen terrassen </title>
-        <meta name="viewport" content="width=device-width,intitial-scale=1" />
         <link rel="stylesheet" type="text/css" href="/CSS/styles.css">
     </head>
 <body>
     <header>
-        <div class="box-1">
-        </div>
+        <figure class="foto-header">
+        <img width="100%" src="/img/El-castell-de-guadalest.jpeg" alt="" />
+        </figure>
+    
     </header>
+    <nav>
+        <a href="checklist.html"> Ga naar de checklist</a>
+    </nav>
     <main>
         <div class="box-2">
-            <h1>Recensie achterlaten en/of terras toevoegen</h1>
-            <h2>Heeft u een leuke tijd gehad? Of heb ik een terras gemist?</h2>
+            <h1>Review achterlaten en/of terras toevoegen</h1>
+            <h2>Heeft u een leuke tijd gehad? 
+            <br/>Of heb ik een terras gemist?</h2>
             <p>Laat een berichtje achter:</p>
             <form name="contact" method="POST" data-netlify="true">
                 <p>
@@ -24,26 +29,17 @@
                 <p>
                     <label> E-mail <input type="email" name="e-mail" /></label>
                 </p>
-                
-                <p>
-                    <legend></legend>
-                    <label> Man: <input name="gender" type="radio" /></label>
-                    <label> Vrouw: <input name="gender" type="radio" /></label>
-                    <label> Neutraal: <input name="gender" type="radio" /></label>
-                </p>
-            
                 <p>
                     <label> Naam Terras <br/><input type="text" name="name" /></label>
                     <br/>
                     <label> Datum bezoek <br/><input type="date" name="Datum"/></label>
                     <br/>
-                    <label> Recensie Terrasbezoek <br/><textarea name="text" rows="10" cols="30"></textarea></label>
-                    
+                    <label> Review Terrasbezoek <br/><textarea name="text" rows="10" cols="30"></textarea></label>  
                 </p>
                 <p>
                     <label> Naam toe te voegen terras <br/> <input type="text" name="name" /></label>
                     <br/>
-                    <label> Terras toevoegen omdat:<br/><textarea name="text" rows="10" cols="30"></textarea></label>
+                    <label> Terras toevoegen omdat<br/><textarea name="text" rows="10" cols="30"></textarea></label>
                 </p>
                 <p>
                     <label> Website <input type="url" name="website"></label>
@@ -59,9 +55,7 @@
         </div>
     </main>
     <footer>
-        <p>
             <a href="index.html"> Back to the homepage </a>
-        </p>
     </footer>
 </body>
 
