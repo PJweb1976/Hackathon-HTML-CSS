@@ -33,7 +33,7 @@ a {
 }
 
 a:visited {
-  color: lightskyblue;
+  color: rgb(24, 8, 170);
 }
 
 a:hover {
@@ -48,19 +48,22 @@ a:focus {
 ul {
   list-style: none;
 }
+
 main {
   display: flex;
   width: fit-content;
   font-size: 1em;
   text-align: center;
-  padding: 1em;
+  padding: 5em;
+  border: 5em;
 }
+
 main .box-2 {
   display: flex;
-  width:fit-content;
+  width: fit-content;
   flex-direction: column;
   justify-content: center;
-  text-align:center;
+  text-align: center;
 }
 
 figure {
@@ -70,26 +73,33 @@ figure {
 .foto-header {
   display: flex;
 }
+
 .foto-header img {
   max-width: 100%;
   max-height: 30em;
   object-fit: cover;
 }
+
 .header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: lightgrey;
 }
+
 .header > * {
   max-width: 74ch;
   margin-left: auto;
   margin-right: auto;
 }
+
 .header a {
-  color: turquoise;
+  color: rgb(64, 160, 224);
 }
 
+nav {
+  background-color: rgb(238, 231, 231);
+}
 nav a {
   display: flex;
   flex-direction: row;
@@ -121,11 +131,13 @@ nav a {
 .box-2 h1 {
   grid-area: 1/1/2/4;
 }
+
 .box-2 legend {
   grid-area: 2/1/3/4;
   margin-bottom: 5px;
   font-size: 20px;
 }
+
 .control__group {
   grid-area: 3/1/4/4;
   margin-top: 1em;
@@ -139,9 +151,11 @@ nav a {
   object-fit: cover;
   margin-left: 0px;
 }
+
 .item__title {
   font-size: 1em;
 }
+
 .item__figure {
   border: 2px solid black;
   margin-bottom: 2em;
@@ -151,10 +165,12 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  background-color: rgb(219, 214, 214);
 }
 
 /*media queries*/
 @media (min-width: 1024px) {
+  /*
   .list__item {
     padding: 0;
     margin: 0;
@@ -162,18 +178,19 @@ footer {
     flex-wrap: wrap;
     width: 100%;
     justify-content: flex-end;
-  }
-
+  }*/
+  /*
   .list__item > * {
     flex: 1 0 2em;
     border: 1px solid black;
     font-size: 1em;
     text-align: center;
     padding: 1em;
-  }
+  }*/
+  /*
   .list__item figure {
     max-width: 100%;
-  }
+  }*/
   .header {
     background-color: lightblue;
   }
@@ -185,9 +202,6 @@ footer {
     justify-content: space-evenly;
     box-sizing: border-box;
   }
-  main .box-2 {
-    max-width: 500px;
-  }
 
   .container {
     display: grid;
@@ -196,6 +210,7 @@ footer {
     column-gap: 1em;
     row-gap: 0.5em;
   }
+
   .list__item-1 {
     grid-area: 1/1/2/2;
   }
@@ -240,15 +255,13 @@ footer {
     .header {
       background-color: lightgray;
     }
-    main .box-2 {
-      max-width: 500px;
-    }
 
     .container {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       grid-template-rows: repeat(5, 1fr);
     }
+
     .list__item-1 {
       grid-area: 1/1/2/2;
     }
